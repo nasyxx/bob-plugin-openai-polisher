@@ -14,7 +14,7 @@ def update_appcast(version, desc):
         'version': version,
         'desc': desc,
         'sha256': file_hash,
-        'url': f'https://github.com/yetone/bob-plugin-openai-polisher/releases/download/v{version}/{release_file.name}',
+        'url': f'https://github.com/nasyxx/bob-plugin-openai-polisher/releases/download/v{version}/{release_file.name}',
         'minBobVersion': '0.5.0'
     }
     appcast_file = Path('appcast.json')

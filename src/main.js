@@ -13,20 +13,18 @@ function translate(query, completion) {
         Authorization: `Bearer ${api_key}`,
     };
     const detailedPolishingMode = $option.polishing_mode === "detailed";
+    let sysprompt = "You are a text embellisher, you can only embellish the text, don't interpret it.";
     let prompt =
-        "Revise the following sentences to make them more clear, concise, and coherent";
-    if (detailedPolishingMode) {
-        prompt = `${prompt}. Please note that you need to list the changes and briefly explain why`;
-    }
+        "Make it more academic";
     switch (query.detectFrom) {
         case "zh-Hant":
-            prompt = "潤色此句";
+            prompt = "更學術";
             if (detailedPolishingMode) {
                 prompt = `${prompt}。請列出修改項目，並簡述修改原因`;
             }
             break;
         case "zh-Hans":
-            prompt = "润色此句";
+            prompt = "更学术";
             if (detailedPolishingMode) {
                 prompt = `${prompt}。请注意要列出更改以及简要解释一下为什么这么修改`;
             }
@@ -68,8 +66,8 @@ function translate(query, completion) {
     const isChatGPTModel = ChatGPTModels.indexOf($option.model) > -1;
     if (isChatGPTModel) {
         body.messages = [
-            { role: "system", content: prompt },
-            { role: "user", content: query.text },
+            { role: "system", content: sysprompt },
+            { role: "user", content: `${prompt}:\n\n${query.text}` },
         ];
     } else {
         body.prompt = `${prompt}:\n\n${query.text} =>`;

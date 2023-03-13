@@ -1,13 +1,13 @@
 {
-    "identifier": "xyz.yetone.openai.polisher",
+    "identifier": "xyz.nasy.openai.polisher",
     "version": "0.1.0",
     "category": "translate",
     "name": "OpenAI Polisher",
     "summary": "GPT powered polisher",
     "icon": "",
-    "author": "yetone <yetoneful@gmail.com>",
-    "homepage": "https://github.com/yetone/bob-plugin-openai-polisher",
-    "appcast": "https://raw.githubusercontent.com/yetone/bob-plugin-openai-polisher/main/appcast.json",
+    "author": "yetone <yetoneful@gmail.com>, nasy<nasyxx@gmail.com>",
+    "homepage": "https://github.com/nasyxx/bob-plugin-openai-polisher",
+    "appcast": "https://raw.githubusercontent.com/nasyxx/bob-plugin-openai-polisher/main/appcast.json",
     "minBobVersion": "0.5.0",
     "options": [
         {
@@ -48,9 +48,9 @@
             ]
         },
         {
-            "identifier": "polishing_mode",
+            "identifier": "academic_mode",
             "type": "menu",
-            "title": "润色模式",
+            "title": "学术模式",
             "defaultValue": "simplicity",
             "menuValues": [
                 {
